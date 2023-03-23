@@ -15,12 +15,15 @@ class CreateCandidatsTable extends Migration
     {
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
-            $table->string('adresseEmail');
+            $table->string('email');
+            // $table->string('eadresseEmail')->unique();
+            // $table->timestamp('adresseEmail_verified_at')->nullable();
             $table->string('nom');
             $table->string('prenom');
             $table->string('telephone');
-            $table->string('adresseDomicile');
-            $table->string('domaineCompetence');
+            $table->string('adresse');
+            $table->string('domaine');
+            $table->string('myfile');
             $table->string('question');
             $table->timestamps();
         });

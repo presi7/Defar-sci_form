@@ -10,12 +10,13 @@ class Candidat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'adresseEmail',
+        'email',
         'nom',
         'prenom',
         'telephone',
-        'adresseDomicile',
-        'domaineCompetence',
+        'adresse',
+        'domaine',
+        'myfile',
         'question'
     ];
 }

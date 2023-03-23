@@ -22,9 +22,11 @@ class CandidatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function liste()
     {
-        //
+        $candidat = Candidat::all();
+
+        return view('candidat.liste',compact('candidat'));
     }
 
     /**
@@ -35,7 +37,19 @@ class CandidatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $candidat = new Candidat();
+        $candidat->email = $request->email;
+        $candidat->nom = $request->nom;
+        $candidat->prenom = $request->prenom;
+        $candidat->telephone = $request->telephone;
+        $candidat->adresse = $request->adresse;
+        $candidat->domaine = $request->domaine;
+        $candidat->cv = $request->myfile;
+        $candidat->question = $request->question;
+
+        $candidat->save();
+
+        return redirect()->back()->with('success','candidat enregistré');
     }
 
     /**
@@ -57,7 +71,9 @@ class CandidatController extends Controller
      */
     public function edit($id)
     {
-        //
+        $candidat = Candidat::find($id);
+
+        return view('candidat.editer',compact('candidat'));
     }
 
     /**
