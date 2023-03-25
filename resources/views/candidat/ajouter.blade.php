@@ -44,7 +44,7 @@
                         <option value="ressources-humaines">Ressources Humaines</option>
                         <option value="marketing-digital">Marketing Digital</option>
                         <option value="gestion-projet">Gestion Projet</option>
-                        <option value="informatique-bureautique">Informatique Bureautique/option>
+                        <option value="informatique-bureautique">Informatique Bureautique</option>
                         <option value="developpement-web">Développement Web</option>
                         <option value="ardino">Ardino(Robotique-Internet des objets connectés)</option>
                         <option value="modelisation-impression3d">Modélisation et Impression 3D</option>

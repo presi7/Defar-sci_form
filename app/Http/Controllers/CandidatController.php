@@ -25,8 +25,22 @@ class CandidatController extends Controller
     public function liste()
     {
         $candidat = Candidat::all();
+        $total = Candidat::count();
+        $rh = Candidat::where('domaine', 'Ressources Humaines')->count();
+        $md = Candidat::where('domaine', 'Marketing Digital')->count();
+        $gp = Candidat::where('domaine', 'Gestion Projet')->count();
+        $ib = Candidat::where('domaine', 'Informatique Bureautique')->count();
+        $dw = Candidat::where('domaine', 'Developpement web')->count();
+        $ard = Candidat::where('domaine', 'Arduino(robotique - internet des objets connectés)')->count();
+        $mi = Candidat::where('domaine', 'Modélisation et Impression 3D')->count();
+        $maint = Candidat::where('domaine', 'Maintenance')->count();
+        $dg = Candidat::where('domaine', 'Design Graphique')->count();
+        $other = Candidat::where('domaine', 'Autres')->count();
+        return view('candidat.liste',compact('candidat','total','rh','md','gp','ib','dw','ard','mi','maint','dg','other'));
 
-        return view('candidat.liste',compact('candidat'));
+
+        // $candidats = Candidat::all();
+        // return view('dashboard', ['candidats' => $candidats]);
     }
 
     /**
@@ -44,7 +58,7 @@ class CandidatController extends Controller
         $candidat->telephone = $request->telephone;
         $candidat->adresse = $request->adresse;
         $candidat->domaine = $request->domaine;
-        $candidat->cv = $request->myfile;
+        $candidat->myfile = $request->myfile;
         $candidat->question = $request->question;
 
         $candidat->save();
