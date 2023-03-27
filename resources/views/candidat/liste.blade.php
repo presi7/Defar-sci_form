@@ -3,17 +3,23 @@
 @section('content')
 <div class="container-fluid">
 
-    <div>Total : {{ $total }}</div>
-    <div>Ressources Humaines : {{ $rh }}</div>
-    <div>Marketing Digital : {{ $md }}</div>
-    <div>Gestion Projet{{ $gp }}</div>
-    <div>Informatique Bureautique : {{ $ib }}</div>
-    <div>Developpement web : {{ $dw }}</div>
-    <div>Arduino : {{ $ard }}</div>
-    <div>Modelisation Impression 3D : {{ $mi }}</div>
-    <div>Maintenance : {{ $maint }}</div>
-    <div>Design Graphique : {{ $dg }}</div>
-    <div>Autres : {{ $other }}</div>
+        <div class="d-flex mt-3 justify-content-center align-items-center mx-3">
+            <div class="badge text-wrap" ><h2 class="text-black fs-6">Total</h2> <div class=" border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p class="text-black" style="font-size:24px; padding:10px">{{ $total }}</p></div></div>
+        </div>
+        <div class="d-flex mt-3 justify-content-center align-items-center mx-3">
+            <div class="badge text-wrap" ><h2 class="text-black fs-6">RH</h2> <div class=" border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $rh }}</p></div></div>
+            <div class="badge text-wrap" ><h2 class="text-black fs-6">MD</h2> <div class=" border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $md }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">GP</h2><div class=" border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $gp }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">IB</h2> <div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $ib }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">DW</h2> <div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $dw }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">Ar</h2><div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $ard }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">M3 </h2><div class="border-info-info bg-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $mi }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">Mt </h2><div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $maint }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">DG</h2> <div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $dg }}</p></div></div>
+            <div class="badge text-wrap"><h2 class="text-black fs-6">Au </h2><div class="border-info bg-info rounded-circle" style="width: 50px; height: 50px; margin:auto"><p style="font-size:24px; padding:10px">{{ $other }}</p></div></div>
+        </div>
+
+
 
     <div class="card mt-5" >
         <div class="card-header bg-info text-white">Liste des Candidats</div>
