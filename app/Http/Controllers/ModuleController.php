@@ -63,9 +63,11 @@ class ModuleController extends Controller
      * @param  \App\Models\Module  $module
      * @return \Illuminate\Http\Response
      */
-    public function edit(Module $module)
+    public function edit($id)
     {
-        //
+        $module = Module::find($id);
+
+        return view('module.editer',compact('module'));
     }
 
     /**
@@ -75,9 +77,22 @@ class ModuleController extends Controller
      * @param  \App\Models\Module  $module
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Module $module)
+    public function update(Request $request, $id)
     {
-        //
+        // $module = new Module();
+
+        $module= Module::find($id);
+
+        $module->libele = $request->libele;
+
+        $module->update();
+
+        return redirect()->route('liste.module')->with('success','module updated');
+
+        // return redirect()->back()->with('success','module modifié');
+
+        // $sucess='User Updated';
+        // return redirect()->back()->withSucess($sucess);
     }
 
     /**
@@ -86,8 +101,10 @@ class ModuleController extends Controller
      * @param  \App\Models\Module  $module
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Module $module)
+    public function destroy($id)
     {
-        //
+        $module = Module ::find($id);
+        $module->delete();
+        return back();
     }
 }

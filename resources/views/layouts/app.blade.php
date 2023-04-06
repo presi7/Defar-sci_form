@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   </head>
-  <body style="background-color: #f8c8a0">
+  <body style="background-color: #F3F2EF">
 
   {{-- <nav class="navbar navbar-expand-lg  bg-dark">
   <div class="container-fluid">

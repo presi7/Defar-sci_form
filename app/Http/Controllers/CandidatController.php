@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Candidat;
+use App\Models\Module;
 
 class CandidatController extends Controller
 {
@@ -14,7 +15,13 @@ class CandidatController extends Controller
      */
     public function index()
     {
-        return view('candidat.ajouter');
+        // liste des modules dans module
+        $module = Module::all();
+
+
+        return view('candidat.ajouter',compact('module'));
+
+
     }
 
     /**
@@ -28,11 +35,11 @@ class CandidatController extends Controller
         $total = Candidat::count();
         $rh = Candidat::where('domaine', 'Ressources Humaines')->count();
         $md = Candidat::where('domaine', 'Marketing Digital')->count();
-        $gp = Candidat::where('domaine', 'Gestion Projet')->count();
+        $gp = Candidat::where('domaine', 'gestion-projet')->count();
         $ib = Candidat::where('domaine', 'Informatique Bureautique')->count();
         $dw = Candidat::where('domaine', 'Developpement web')->count();
         $ard = Candidat::where('domaine', 'Arduino(robotique - internet des objets connectés)')->count();
-        $mi = Candidat::where('domaine', 'Modélisation et Impression 3D')->count();
+        $mi = Candidat::where('domaine', 'modelisation-impression3d')->count();
         $maint = Candidat::where('domaine', 'Maintenance')->count();
         $dg = Candidat::where('domaine', 'Design Graphique')->count();
         $other = Candidat::where('domaine', 'Autres')->count();
@@ -74,7 +81,9 @@ class CandidatController extends Controller
      */
     public function show($id)
     {
-        //
+        $candidat = Candidat::find($id);
+
+        return view('candidat.montrer',compact('candidat'));
     }
 
     /**
@@ -110,6 +119,8 @@ class CandidatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $candidat = Candidat ::find($id);
+        $candidat->delete();
+        return back();
     }
 }

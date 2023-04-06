@@ -15,17 +15,18 @@ use App\Http\Controllers\ModuleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 //Route candidat
 
 
-Route::get('/ajouter/candidat', [CandidatController::class, 'index']);
+Route::get('/', [CandidatController::class, 'index']);
 Route::get('/liste/candidat', [CandidatController::class, 'liste'])->name('liste.candidat');;
 Route::post('/enregistrer/candidat', [CandidatController::class, 'store'])->name('store.candidat');
+Route::post('/montrer/candidat', [CandidatController::class, 'show'])->name('show.candidat');
 Route::get('/supprimer-candidat/{id}', [CandidatController::class, 'destroy'])->name('delete-candidat');
 Route::get('/editer-candidat/{id}', [CandidatController::class, 'edit'])->name('edit-candidat');
 Route::post('/modifier/candidat/{id}', [CandidatController::class, 'update'])->name('update.candidat');
