@@ -11,7 +11,7 @@
         {{session('success')}}
     </div>
     @endif
-    <img src="images/ciel.jpg" alt="Defarsci" width="100%" height="400" class="d-block mx-auto mt-3 rounded" style=" object-fit: none;">
+    <img src="images/def.JPG" alt="Defarsci" width="100%" height="400" class="d-block mx-auto mt-3 rounded" style=" object-fit: cover;">
     <div class="card my-3 " style="width: 38rem; margin: auto">
 
         <div class="card-header bg-info text-black fs-5 fw-bold text-center">FORMATION DE STAGE 100% PRATIQUE</div>
